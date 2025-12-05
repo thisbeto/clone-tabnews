@@ -1,5 +1,5 @@
 function Home() {
-    return <h1>Novo Teste de commit do curso.dev</h1>
+    return <h1>Pao com Ovo Teste Deploy</h1>
 }
 
 export default Home;
