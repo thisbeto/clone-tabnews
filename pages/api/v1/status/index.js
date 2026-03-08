@@ -1,6 +1,4 @@
 import database from "infra/database.js";
-import { Client } from "pg";
-import { version } from "react";
 
 async function status(request, response) {
   const updatedAt = new Date().toISOString();
