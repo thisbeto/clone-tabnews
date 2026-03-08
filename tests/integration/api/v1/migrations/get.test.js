@@ -3,7 +3,7 @@ import orchestrator from "tests/orchestrator.js";
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
-  await database.query("DROP schema public cascade; CREATE schema public;")
+  await database.query("DROP schema public cascade; CREATE schema public;");
 });
 
 test("GET to /api/v1/migrations should return 200", async () => {
@@ -15,5 +15,3 @@ test("GET to /api/v1/migrations should return 200", async () => {
   expect(Array.isArray(responseBody)).toBe(true);
   expect(responseBody.length).toBeGreaterThan(0);
 });
-
-
