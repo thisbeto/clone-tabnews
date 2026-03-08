@@ -3,7 +3,7 @@ import orchestrator from "tests/orchestrator.js";
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
-  await database.query("DROP schema public cascade; CREATE schema public;")
+  await database.query("DROP schema public cascade; CREATE schema public;");
 });
 
 test("POST to /api/v1/migrations should return 200", async () => {
@@ -16,10 +16,9 @@ test("POST to /api/v1/migrations should return 200", async () => {
   expect(Array.isArray(responseBody)).toBe(true);
 
   const migrationsExecuted = await database.query(
-    "SELECT COUNT(*) as value FROM public.pgmigrations;"
-  ); 
-  
+    "SELECT COUNT(*) as value FROM public.pgmigrations;",
+  );
+
   const migrationsExecutedValue = parseInt(migrationsExecuted.rows[0].value);
   expect(migrationsExecutedValue).toBe(responseBody.length);
-  
 });
